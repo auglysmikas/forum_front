@@ -166,7 +166,7 @@
     padding: 2px 15px;
 }
 
-/*Profile*/
+
 
 .userProfile {
     height: 400px;
@@ -232,6 +232,13 @@
     font-size: 15px
 }
 
+.flex5 div{
+    margin: 10px;
+}
+
+.name span{
+    margin-left: 3px;
+}
 
 .bigCard {
     display: flex;

@@ -13,9 +13,7 @@ const OneTopic = () => {
     const [getPost, setPost] = useState([])
     const [getComments, setComments] = useState([])
     const [getPageCount, setPageCount] = useState(0);
-    const {getActivePage, setActivePage} = useContext(MyContext)
-    const {getUser} = useContext(MyContext)
-    // const {setNotification} = useContext(MyContext)
+    const {getUser, getActivePage, setActivePage} = useContext(MyContext)
     const [getMessage, setMessage] = useState("")
     const nav = useNavigate()
     const {id} = useParams()
@@ -46,7 +44,6 @@ const OneTopic = () => {
         }
         http.post(replyInfo, "replies").then(res => {
             if (res.success) {
-                // nav(`/main`);
             } else {
                 setMessage(res.message)
             }
@@ -79,13 +76,14 @@ const OneTopic = () => {
                 />
             </div>
 
+            {getUser &&
             <div className="center">
                 <div className="replyInputs center">
                     {getMessage && <div style={{color: 'red'}}>{getMessage}</div>}
                     <input type="text" ref={reply} placeholder="Write your thoughts"/>
-                    <button onClick={publish}>Comment</button>
+                    <button className='pressBtn' onClick={publish}>Comment</button>
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };

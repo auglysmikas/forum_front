@@ -48,17 +48,19 @@ const Topic = ({topic}) => {
     return (
         <div className="forumBox d-flex al-center">
 
-            {!getFavorite.includes(topic._id) ?
-                <div className="flex1 center favoriteIcon" onClick={() => addFavorite(topic._id)}>
-                    <AiOutlineHeart/></div>
-                : <div className="flex1 center favoriteIcon" onClick={() => addFavorite(topic._id)}>
-                    <AiFillHeart/></div>}
-            <div className="d-flex flex6 al-center f-md-column" onClick={() => open(topic._id)}>
+
+            <div className="d-flex flex5 al-center" onClick={() => open(topic._id)}>
                 <div className="flex4 topicHeadline d-flex al-center">{topic.post}</div>
                 <div className="flex1 d-flex al-center j-center">{topic.username}</div>
                 <div className="flex1 d-flex al-center j-center">{topic.commentCounter}</div>
                 <div className="flex2 d-flex f-column al-center">{topic.time}</div>
             </div>
+            {!getFavorite.includes(topic._id) ?
+                <div className="flex1 center favoriteIcon" onClick={() => addFavorite(topic._id)}>
+                    <AiOutlineHeart/></div>
+                : <div className="flex1 center favoriteIcon" onClick={() => addFavorite(topic._id)}>
+                    <AiFillHeart/></div>}
+
         </div>
     )
 };

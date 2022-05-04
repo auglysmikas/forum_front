@@ -8,8 +8,7 @@ import { MdForum } from 'react-icons/md';
 
 const Toolbar = () => {
 
-    const {getUser, setUser, getTopicModal, setTopicModal,
-    } = useContext(MyContext)
+    const {getUser, setUser, setTopicModal} = useContext(MyContext)
 
 
     const navigate = useNavigate()
@@ -41,7 +40,7 @@ const Toolbar = () => {
             }
 
             {getUser &&
-                <div className="flex2 center f-md-column f-md-column">
+                <div className="name flex2 center f-md-column f-md-column">
 
                     <div className="center flex1 hover  purple" onClick={() => navigate('/profile')}>Welcome,  <span> {getUser.username}</span> !</div>
 
